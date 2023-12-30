@@ -23,6 +23,13 @@ class _FirstRouteState extends State<FirstRoute> {
   final _emailController=TextEditingController();
   final _rollnoController=TextEditingController();
   final _phonenoController=TextEditingController();
+
+void clearFields(){
+  _nameController.clear();
+  _emailController.clear();
+  _rollnoController.clear();
+  _phonenoController.clear();
+}
   
 
 void _showDetails(BuildContext context){
@@ -40,7 +47,10 @@ void _showDetails(BuildContext context){
                 content: Text('User ${_nameController.text} logged out.'),
                 actions: [
                   TextButton(onPressed: (){
-                    Navigator.of(context).pop();},
+                    Navigator.of(context).pop();
+                    clearFields();
+
+                  },
                     child: Text('OK'),
                     ),
                 ],
